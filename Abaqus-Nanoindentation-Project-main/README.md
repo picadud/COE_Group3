@@ -1,3 +1,3 @@
 # Abaqus-Nanoindentation-Project
 
-## Current ML algorithm uses Random Forest Regressor
+## Welcome to the Abaqus Nanoindentation Project. This readme.md file contains information on how one can start running multiple Abaqus test runs simultaneously. 
