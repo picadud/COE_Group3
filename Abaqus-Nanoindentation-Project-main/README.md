@@ -16,3 +16,8 @@
 - The simulation directory contains templates and additional generated files for all the simulations that have been executed
 * The targets directory contains data points on the aimed target curve
 + The template directory contains file sets needed for each independent simulation
+
+All simulations can be run using the pipeline.py file.
+```
+python3 pipeline.py
+```
