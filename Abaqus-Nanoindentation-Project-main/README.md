@@ -9,5 +9,4 @@
 ![image](https://github.com/user-attachments/assets/71135a75-8508-4238-8b34-a071bf8e21ea)
 
 
-
-
+### The current file state is set for experiments onto DP1000 grains 1441, 2744, 3198 (please update this if you use a new material)
