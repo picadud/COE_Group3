@@ -20,3 +20,10 @@ All simulations can be run using the pipeline.py file.
 ```
 python3 pipeline.py
 ```
+
+# Acknowledgments
+Special acknowledgments to Rongfei Juan for her invaluable support throughout the entire process. Her continuous feedback, guidance, and provision of essential simulation templates have significantly contributed to the success of this project. We extend our sincere gratitude for their collaborative spirit and assistance.
+
+Special thanks to Binh for providing invaluable assistance in resolving the challenges associated with pushing large data files to GitHub.
+
+Gratitude to Professor Junhe Lian for their outstanding efforts in organizing and facilitating the course.
