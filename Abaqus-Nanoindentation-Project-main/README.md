@@ -1,6 +1,6 @@
 # Abaqus-Nanoindentation-Project
 
-## Welcome to the Abaqus Nanoindentation Project. This readme.md file contains information on how one can start running multiple Abaqus test runs simultaneously. 
+## Welcome to the Abaqus Nanoindentation Project. This README.md file contains information on how one can start running multiple Abaqus test runs simultaneously. 
 
 ### The following project can be done using two different approaches. The first option is implementing a loss function and ML algorithm to predict several points on the force-displacement curve explained in Stage 3-1. The second approach is to use iterative calibration using a direct regression model shown in Stage 3-2.
 
