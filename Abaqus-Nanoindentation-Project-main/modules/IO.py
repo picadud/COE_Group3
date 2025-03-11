@@ -57,7 +57,7 @@ def create_FD_Curve_file(filePath, displacement, force):
         df.loc[len(df.index)] = [displacement[i], force[i] * 1e-3, force[i]]
     df.to_excel(f"{filePath}/FD_Curve.xlsx", index=False)
     df.to_csv(f"{filePath}/FD_Curve.csv", index=False)
-
+#to add error message if not finding the line for the following function.
 def replace_parameters_into_inp(filePath, paramsDict, CPLaw):
     if CPLaw == 'PH':
         with open(filePath, 'r') as geometry_inp:
