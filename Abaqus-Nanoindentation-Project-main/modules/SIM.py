@@ -10,7 +10,7 @@ import shutil
 import random
 import time
 import sobol_seq
-
+max_displacement = 100.E-09
 class SIMULATION():
     def __init__(self, info):
         self.info = info
@@ -131,21 +131,30 @@ class SIMULATION():
             shutil.copy(f"{simPath}/initial/{index}/FD_Curve.txt", f"{resultPath}/initial/data/{index}")
             shutil.copy(f"{simPath}/initial/{index}/parameters.xlsx", f"{resultPath}/initial/data/{index}")
             shutil.copy(f"{simPath}/initial/{index}/parameters.csv", f"{resultPath}/initial/data/{index}")
-                        
+
             displacement, force = read_FD_Curve(f"{simPath}/initial/{index}/FD_Curve.txt")
             create_FD_Curve_file(f"{resultPath}/initial/data/{index}", displacement, force)
 
             FD_Curves[paramsTuple] = {}
             FD_Curves[paramsTuple]['displacement'] = displacement
             FD_Curves[paramsTuple]['force'] = force
-                    
+       #to add error detecting code from curve data  failed if the displacement didn't reach the end.
         # Returning force-displacement curve data
-        if batchNumber == "all":
-            np.save(f"{resultPath}/initial/common/FD_Curves.npy", FD_Curves)
-            printLog("Saving successfully FD_Curves.npy results", logPath)
+        if displacement.max() >= max_displacement:
+            if batchNumber == "all":
+                np.save(f"{resultPath}/initial/common/FD_Curves.npy", FD_Curves)
+                printLog("Saving successfully FD_Curves.npy results", logPath)
+            else:
+                np.save(f"{resultPath}/initial/common/FD_Curves_batch_{batchNumber}.npy", FD_Curves)
+                printLog(f"Saving successfully FD_Curves_batch_{batchNumber}.npy results", logPath)
         else:
-            np.save(f"{resultPath}/initial/common/FD_Curves_batch_{batchNumber}.npy", FD_Curves)
-            printLog(f"Saving successfully FD_Curves_batch_{batchNumber}.npy results", logPath)
+            printLog(f"Simulation not completed, max displacement is {displacement.max()}, it is {displacement.max() / max_displacement * 100} percent of target displacement.", logPath)
+            if batchNumber == "all":
+                np.save(f"{resultPath}/initial/failure/FD_Curves.npy", FD_Curves)
+                printLog("failure saved successfully to FD_Curves.npy results", logPath)
+            else:
+                np.save(f"{resultPath}/initial/failure/FD_Curves_batch_{batchNumber}.npy", FD_Curves)
+                printLog(f"failure saved successfully to FD_Curves_batch_{batchNumber}.npy results", logPath)
     
     def delete_sim_outputs_initial(self, indexParamsDict):
         simPath = self.info['simPath']

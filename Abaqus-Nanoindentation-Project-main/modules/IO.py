@@ -34,11 +34,12 @@ def read_FD_Curve(filePath):
     # column 1 is time step
     # column 2 is displacement
     # column 3 is force
-    columns=['X', 'Displacement', 'Force']
+    columns=['X', 'Height', 'Pressure'] # to change it back to force and displacement
     df = pd.DataFrame(data=output_data, columns=columns)
     # Converting to numpy array
     displacement = df.iloc[:, 1].to_numpy()
     force = df.iloc[:, 2].to_numpy()
+    #exiprint(force.dtype)
     return displacement, force
 
 def create_parameters_file(filePath, paramsDict):

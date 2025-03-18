@@ -32,9 +32,11 @@ def initialize_directory(material, CPLaw, grains, strainRates):
         checkCreate(f"{path}/{objective}/initial")
         checkCreate(f"{path}/{objective}/initial/data")
         checkCreate(f"{path}/{objective}/initial/common")
+        checkCreate(f"{path}/{objective}/initial/failure")
         checkCreate(f"{path}/{objective}/iteration")
         checkCreate(f"{path}/{objective}/iteration/data")
         checkCreate(f"{path}/{objective}/iteration/common")
+        checkCreate(f"{path}/{objective}/iteration/failure")
 
     # For simulations
     path = f"simulations/{optimizingInstance}"

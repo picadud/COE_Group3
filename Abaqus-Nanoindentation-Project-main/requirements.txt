@@ -1,11 +1,2 @@
-numpy
-pandas
-matplotlib
-bayesian-optimization
-prettytable
-scikit-learn
-scipy
-torch
-botorch
-openpyxl
-sobol-seq
+numpy pandas matplotlib bayesian-optimization prettytable scikit-learn scipy torch openpyxl sobol-seq
+ botorch
