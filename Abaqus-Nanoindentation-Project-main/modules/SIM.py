@@ -138,7 +138,7 @@ class SIMULATION():
             FD_Curves[paramsTuple] = {}
             FD_Curves[paramsTuple]['displacement'] = displacement
             FD_Curves[paramsTuple]['force'] = force
-       #to add error detecting code from curve data  failed if the displacement didn't reach the end.
+       #current post processing file wrong, since displacement only records the last instance of the for loop, to add the error handling in the for loop above to check every simulation.
         # Returning force-displacement curve data
         if displacement.max() >= max_displacement:
             if batchNumber == "all":
